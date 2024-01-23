@@ -1,0 +1,17 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+smc_i2c_lib KEYWORD1
+SMC KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+sendTargetVel KEYWORD2
+sendPwm KEYWORD2
+getMotorsPos  KEYWORD2
+getMotorsVel  KEYWORD2
+getMotorAData KEYWORD2
+getMotorBData KEYWORD2
