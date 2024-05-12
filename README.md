@@ -1,5 +1,5 @@
 # smc_i2c_lib
-This is a child project of the Samuko Motor Control (SMC) project. This is an Arduino library meant to be used in your Arduino robotic project to communicate with the **`smc_l298n_pid_driver module`** in order to send target angular velocities to the motors or receive the motor's angular velocity and angular position, after successful velocity PID setup with the [**`smc_app`**](https://github.com/samuko-things-company/smc_app).
+This is a child project of the Samuko Motor Control (SMC) project. This is an Arduino library meant to be used in your Arduino robotic project to communicate with the **`smc_l298n_pid_driver module`** in order to send target angular velocities to the motors or receive the motor's angular velocity and angular position, after successful velocity PID setup with the [**`smc_setup_application`**](https://github.com/samuko-things-company/smc_setup_application).
 
 > you can use it in your Arduino-based robotics project (e.g Arduino UNO, Arduino NANO, Arduino MEGA, Esp32, etc.)
 
@@ -7,7 +7,7 @@ A simple way to get started is simply to try out and follow the example code
 
 
 ## How to Use the Library
-- Ensure you have the **`smc_l298n_pid_driver module`** with motors interfaced with it and the encoder and pid parameters are fully setup with the **`smc_app`**.
+- Ensure you have the **`smc_l298n_pid_driver module`** with motors interfaced with it and the encoder and pid parameters are fully setup with the **`smc_setup_application`**.
 
 - Download download the library by clicking on the green Code button above (or clone it)
 
