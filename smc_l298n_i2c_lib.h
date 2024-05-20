@@ -1,5 +1,5 @@
-#ifndef SMC_I2C_LIB_H
-#define SMC_I2C_LIB_H
+#ifndef SMC_L298N_I2C_LIB_H
+#define SMC_L298N_I2C_LIB_H
 
 #if ARDUINO >= 100
   #include <Arduino.h>

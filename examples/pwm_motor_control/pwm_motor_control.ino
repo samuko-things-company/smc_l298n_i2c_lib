@@ -4,15 +4,15 @@
  * encoder which is already connected to the smc_driver shield module and have already
  * succesfully set up their velocity PID control using the smc_app GUI 
  * 
- * The code basically sends a low target velocity (in rad/s), waits for some time and then
- * sends a high target velocity (in rad/s). it also prints out the motors' angular positions
+ * The code basically sends a low PWM value, waits for some time and then
+ * sends a high PWM value. it also prints out the motors' angular positions
  * (in rad) and angular velocities (in rad/s).
  * 
  * you can copy the code and use it in your project as you will.
  */
 
 // SMC i2c communication library
-#include <smc_i2c_lib.h>
+#include <smc_l298n_i2c_lib.h>
 
 
 int smcAddress = 1; // set this address to the same address you have during setup via the GUI app

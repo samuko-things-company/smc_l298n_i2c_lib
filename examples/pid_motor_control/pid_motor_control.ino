@@ -1,8 +1,8 @@
 
 /*
  * Basic example code on how to control via I2C your geared DC motor with quadrature 
- * encoder which is already connected to the smc_driver shield module and have already
- * succesfully set up their velocity PID control using the smc_app GUI 
+ * encoder which is already connected to the smc_l298n_pid_driver module and have already
+ * succesfully set up their velocity PID control using the smc_l298n_setup_application
  * 
  * The code basically sends a low target velocity (in rad/s), waits for some time and then
  * sends a high target velocity (in rad/s). it also prints out the motors' angular positions
@@ -12,7 +12,7 @@
  */
 
 // SMC i2c communication library
-#include <smc_i2c_lib.h>
+#include <smc_l298n_i2c_lib.h>
 
 
 int smcAddress = 1; // set this address to the same address you have during setup via the GUI app

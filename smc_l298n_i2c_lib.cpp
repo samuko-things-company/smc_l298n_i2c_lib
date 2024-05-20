@@ -1,5 +1,5 @@
 
-#include "smc_i2c_lib.h"
+#include "smc_l298n_i2c_lib.h"
 
 
 SMC::SMC (int slave_addr){
