@@ -8,15 +8,15 @@ SMC::SMC (int slave_addr){
 
 
 bool SMC::sendTargetVel(float valA=0.0, float valB=0.0){
-  return send("tag", valA, valB);
+  return send("/tag", valA, valB);
 }
 
 bool SMC::sendPwm(int valA=0, int valB=0){
-  return send("pwm", valA, valB);
+  return send("/pwm", valA, valB);
 }
 
 void SMC::getMotorsPos(float &angPosA, float &angPosB){
-  get("pos");
+  get("/pos");
 
   angPosA = valA;
   angPosB = valB;
@@ -26,7 +26,7 @@ void SMC::getMotorsPos(float &angPosA, float &angPosB){
 }
 
 void SMC::getMotorsVel(float &angVelA, float &angVelB){
-  get("vel");
+  get("/vel");
   
   angVelA = valA;
   angVelB = valB;
@@ -36,7 +36,7 @@ void SMC::getMotorsVel(float &angVelA, float &angVelB){
 }
 
 void SMC::getMotorBData(float &angPos, float &angVel){
-  get("dataB");
+  get("/dataB");
   
   angPos = valA;
   angVel = valB;
@@ -46,7 +46,7 @@ void SMC::getMotorBData(float &angPos, float &angVel){
 }
 
 void SMC::getMotorAData(float &angPos, float &angVel){
-  get("dataA");
+  get("/dataA");
   
   angPos = valA;
   angVel = valB;
@@ -109,7 +109,7 @@ void SMC::masterSendData(String i2c_msg){
   i2c_msg.toCharArray(charArray, i2c_msg.length() + 1);
 
   Wire.beginTransmission(slaveAddr); 
-  Wire.write(charArray, i2c_msg.length());                
+  Wire.write(charArray);                
   Wire.endTransmission();
 }
 
