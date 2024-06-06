@@ -25,22 +25,22 @@ A simple way to get started is simply to try out and follow the example code
 ## Basic Library functions and usage
 
 - initialize the smc i2c communication by creating an object
-  > `SMC` smc_object(i2c_address)
+  > `SMC` smc(i2c_address)
 
 - send target angular velocity command
-  > smc_object.`sendTargetVel`(motorATargetVel, motorBTargetVel)
+  > smc.`sendTargetVel`(motorATargetVel, motorBTargetVel)
 
 - send PWM command
-  > smc_object.`sendPwm`(motorA_PWM, motorB_PWM)
+  > smc.`sendPwm`(motorA_PWM, motorB_PWM)
 
 - read motors angular position
-  > smc_object.`getMotorsPos`(&angPosA, &angPosB) // gets and copies the motors A and B angular position into angPosA, angPosB
+  > smc.`getMotorsPos`(&angPosA, &angPosB) // gets and copies the motors A and B angular position into angPosA, angPosB
 
 - read motors angular velocity
-  > smc_object.`getMotorsVel`(&angVelA, &angVelB) // gets and copies the motors A and B angular velocity angVelA, angVelB
+  > smc.`getMotorsVel`(&angVelA, &angVelB) // gets and copies the motors A and B angular velocity angVelA, angVelB
 
 - read motorA angular position and velocity together
-  > smc_object.`getMotorAData`(&angPosA, &angVelA) // gets and copies the motorA ang pos and vel into angPosA, angVelA
+  > smc.`getMotorAData`(&angPosA, &angVelA) // gets and copies the motorA ang pos and vel into angPosA, angVelA
 
 - read motorB angular position and velocity together
-  > smc_object.`getMotorBData`(&angPosB, &angVelB) // gets and copies the motorB ang pos and vel into angPosB, angVelB
+  > smc.`getMotorBData`(&angPosB, &angVelB) // gets and copies the motorB ang pos and vel into angPosB, angVelB
