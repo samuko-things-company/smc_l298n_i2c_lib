@@ -35,8 +35,8 @@ void SMC::getMotorsVel(float &angVelA, float &angVelB){
   valB = 0.0;
 }
 
-void SMC::getMotorBData(float &angPos, float &angVel){
-  get("/dataB");
+void SMC::getMotorAData(float &angPos, float &angVel){
+  get("/dataA");
   
   angPos = valA;
   angVel = valB;
@@ -45,8 +45,8 @@ void SMC::getMotorBData(float &angPos, float &angVel){
   valB = 0.0;
 }
 
-void SMC::getMotorAData(float &angPos, float &angVel){
-  get("/dataA");
+void SMC::getMotorBData(float &angPos, float &angVel){
+  get("/dataB");
   
   angPos = valA;
   angVel = valB;

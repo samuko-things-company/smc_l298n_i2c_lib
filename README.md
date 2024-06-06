@@ -10,8 +10,9 @@ A simple way to get started is simply to try out and follow the example code
 - Ensure you have the **`smc_l298n_pid_driver module`** with motors interfaced with it and the encoder and pid parameters are fully setup with the **`smc_l298n_setup_application`**.
 
 - Download download the library by clicking on the green Code button above (or clone it)
+  > if you download it, extract it and change the folder name to `smc_l298n_i2c_lib`
 
-- move the downloaded library file to your Arduino library folder
+- Move the downloaded library file -`smc_l298n_i2c_lib` - to your Arduino library folder
   > e.g on linux: ... home/Arduino/libraries/
   >
   > e.g on windows: ... Documents/Arduino/libraries/
@@ -23,17 +24,23 @@ A simple way to get started is simply to try out and follow the example code
 
 ## Basic Library functions and usage
 
-- initialize the smc i2c communication
-  > SMC(i2c_address)
+- initialize the smc i2c communication by creating an object
+  > 'SMC' smc_object(i2c_address)
 
 - send target angular velocity command
-  > .sendTargetVel(motorATargetVel, motorBTargetVel)
+  > smc_object.`sendTargetVel`(motorATargetVel, motorBTargetVel)
 
 - send PWM command
-  > .sendPwm(motorA_PWM, motorB_PWM)
+  > smc_object.`sendPwm`(motorA_PWM, motorB_PWM)
 
 - read motors angular position
-  > .getMotorsPos(&angPosA, &angPosB) // copies the motors angular position into angPosA, angPosB
+  > smc_object.`getMotorsPos`(&angPosA, &angPosB) // gets and copies the motors A and B angular position into angPosA, angPosB
 
 - read motors angular velocity
-  > .getMotorsVel(&angVelA, &angVelB) // copies the motors ang vel angVelA, angVelB
+  > smc_object.`getMotorsVel`(&angVelA, &angVelB) // gets and copies the motors A and B angular velocity angVelA, angVelB
+
+- read motorA angular position and velocity together
+  > smc_object.`getMotorAData`(&angPosA, &angVelA) // gets and copies the motorA ang pos and vel into angPosA, angVelA
+
+- read motorB angular position and velocity together
+  > smc_object.`getMotorBData`(&angPosB, &angVelB) // gets and copies the motorB ang pos and vel into angPosB, angVelB
