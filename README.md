@@ -25,7 +25,7 @@ A simple way to get started is simply to try out and follow the example code
 ## Basic Library functions and usage
 
 - initialize the smc i2c communication by creating an object
-  > 'SMC' smc_object(i2c_address)
+  > `SMC` smc_object(i2c_address)
 
 - send target angular velocity command
   > smc_object.`sendTargetVel`(motorATargetVel, motorBTargetVel)
