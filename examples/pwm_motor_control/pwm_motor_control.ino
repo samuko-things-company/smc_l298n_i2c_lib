@@ -27,7 +27,6 @@ void delayMs(int ms) {
 //////////////////////////////////////////////////
 
 
-bool isSuccessful;
 float angPosA, angPosB; //motorA, motorB (in rad)
 float angVelA, angVelB; //motorA, motorB (in rad/sec)
 
@@ -81,8 +80,6 @@ void loop()
   
   
   if ((millis() - prevTime) >= sampleTime) {
-    /* CODE SHOULD GO IN HERE*/
-
     smc.getMotorsPos(angPosA, angPosB); // gets angPosA, angPosB
     smc.getMotorsVel(angVelA, angVelB); // gets angVelA, angVelB
 
