@@ -1,4 +1,3 @@
-
 /*
  * Basic example code on how to control via I2C your geared DC motor with quadrature
  * encoder which is already connected to the smc_l298n_pid_driver module and have already
@@ -27,18 +26,19 @@ void delayMs(int ms)
 }
 //////////////////////////////////////////////////
 
+bool isSuccessful;
 float angPosA, angPosB; // motorA, motorB (in rad)
 float angVelA, angVelB; // motorA, motorB (in rad/sec)
 
-float lowTargetVel = -3.142; // rad/sec
+float lowTargetVel = -3.142;  // rad/sec
 float highTargetVel = 3.142; // rad/sec
 bool sendHigh = true;
 
 long prevTime;
-long sampleTime = 20; // millisec
+long sampleTime = 100; // millisec
 
 long ctrlPrevTime;
-long ctrlSampleTime = 10000; // millisec
+long ctrlSampleTime = 5000; // millisec
 
 void setup()
 {
@@ -81,16 +81,18 @@ void loop()
 
   if ((millis() - prevTime) >= sampleTime)
   {
+    /* CODE SHOULD GO IN HERE*/
+
     smc.getMotorsPos(angPosA, angPosB); // gets angPosA, angPosB
     smc.getMotorsVel(angVelA, angVelB); // gets angVelA, angVelB
 
-    Serial.print(angPosA, 4);
+    Serial.print(angPosA, 3);
     Serial.print(", ");
-    Serial.println(angVelA, 4);
+    Serial.println(angVelA, 3);
 
-    Serial.print(angPosB, 4);
+    Serial.print(angPosB, 3);
     Serial.print(", ");
-    Serial.println(angVelB, 4);
+    Serial.println(angVelB, 3);
 
     Serial.println();
 

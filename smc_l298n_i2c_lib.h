@@ -2,27 +2,29 @@
 #define SMC_L298N_I2C_LIB_H
 
 #if ARDUINO >= 100
-  #include <Arduino.h>
+#include <Arduino.h>
 #else
-  #include <WProgram.h>
+#include <WProgram.h>
 #endif
-
 
 #include <Wire.h>
 
-
-class SMC {
+class SMC
+{
 public:
-  SMC (int);
+  SMC(int);
 
-  void sendTargetVel(float, float);
-  void sendPwm(int, int);
-  void getMotorsPos(float&, float&);
-  void getMotorsVel(float&, float&);
-  void getMotorAData(float&, float&);
-  void getMotorBData(float&, float&);
+  bool sendTargetVel(float, float);
 
-  
+  bool sendPwm(int, int);
+
+  void getMotorsPos(float &, float &);
+
+  void getMotorsVel(float &, float &);
+
+  void getMotorAData(float &, float &);
+
+  void getMotorBData(float &, float &);
 
 private:
   int slaveAddr;
@@ -30,9 +32,14 @@ private:
   float valA, valB;
 
   void get(String);
-  void send(String, float, float);
+
+  bool send(String, float, float);
+
   void masterSendData(String);
-  String masterReceiveData(byte);
+
+  String masterReceiveData();
+
+  String masterReceiveCharData();
 };
 
 #endif
